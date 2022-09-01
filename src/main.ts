@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import { createVuesticEssential, VaButton } from 'vuestic-ui'
+import { createVuesticEssential } from 'vuestic-ui'
 
-createApp(App).use(createVuesticEssential({ components: { VaButton } })).mount('#app')
+createApp(App).use(createVuesticEssential({ components: { } })).mount('#app')
