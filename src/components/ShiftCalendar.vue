@@ -1,71 +1,102 @@
 <template>
-  <div class="va-table-responsive">
-    <table class="va-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Country</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="user in users" :key="user.id">
-          <td>{{ user.fullName }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.country }}</td>
-          <td>
-            <va-badge :text="user.status" :color="user.status" />
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <va-data-table :items="test">
+    <template #cell(day1)="{ value }">
+      <va-input v-model="hey" placeholder="11-18" />
+    </template>
+    <template #cell(day2)="{ value }">
+      <va-input placeholder="11-18" />
+    </template>
+    <template #cell(day3)="{ value }">
+      <va-input placeholder="11-18" />
+    </template>
+    <template #cell(day4)="{ value }">
+      <va-input placeholder="11-18" />
+    </template>
+    <template #cell(day5)="{ value }">
+      <va-input placeholder="11-18" />
+    </template>
+    <template #cell(day6)="{ value }">
+      <va-input placeholder="11-18" />
+    </template>
+    <template #cell(day7)="{ value }">
+      <va-input placeholder="11-18" />
+    </template>
+  </va-data-table>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  data() {
-    return {
-      users: [
-        {
-          id: 1,
-          fullName: "Ashley Mcdaniel",
-          email: "ashleymcdaniel@nebulean.com",
-          country: "Cayman Islands",
-          status: "warning",
-        },
-        {
-          id: 2,
-          fullName: "Todd Sellers",
-          email: "sellerstodd@nebulean.com",
-          country: "Togo",
-          status: "info",
-        },
-        {
-          id: 3,
-          fullName: "Sherman Knowles",
-          email: "shermanknowles@nebulean.com",
-          country: "Central African Republic",
-          status: "warning",
-        },
-        {
-          id: 4,
-          fullName: "Vasquez Lawson",
-          email: "vasquezlawson@nebulean.com",
-          country: "Bouvet Island",
-          status: "info",
-        },
-      ],
-    };
-  },
-});
+<script setup>
+  import { ref } from 'vue'
+  const hey = ref("")
+  const test = [
+    {
+      name: "ミナ",
+      day1: "11-22",
+      day2: "11-23",
+      day3: "11-23",
+      day4: "11-23",
+      day5: "11-23",
+      day6: "11-23",
+      day7: "11-23",
+    },
+    {
+      name: "チヅ",
+      day1: "11-22",
+      day2: "11-23",
+      day3: "11-23",
+      day4: "11-23",
+      day5: "11-23",
+      day6: "11-23",
+      day7: "11-23",
+    },
+    {
+      name: "チホ",
+      day1: "11-22",
+      day2: "11-23",
+      day3: "11-23",
+      day4: "11-23",
+      day5: "11-23",
+      day6: "11-23",
+      day7: "11-23",
+    },
+    {
+      name: "サヤカ",
+      day1: "11-22",
+      day2: "11-23",
+      day3: "11-23",
+      day4: "11-23",
+      day5: "11-23",
+      day6: "11-23",
+      day7: "11-23",
+    },
+    {
+      name: "アン",
+      day1: "11-22",
+      day2: "11-23",
+      day3: "11-23",
+      day4: "11-23",
+      day5: "11-23",
+      day6: "11-23",
+      day7: "11-23",
+    },
+    {
+      name: "ケイゴ",
+      day1: "11-22",
+      day2: "11-23",
+      day3: "11-23",
+      day4: "11-23",
+      day5: "11-23",
+      day6: "11-23",
+      day7: "11-23",
+    },
+    {
+      name: "カンタ",
+      day1: "11-22",
+      day2: "11-23",
+      day3: "11-23",
+      day4: "11-23",
+      day5: "11-23",
+      day6: "11-23",
+      day7: "11-23",
+    },
+  ];
 </script>
-
-<style lang="scss" scoped>
-.va-table-responsive {
-  overflow: auto;
-}
-</style>
