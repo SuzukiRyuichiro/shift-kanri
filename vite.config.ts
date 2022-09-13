@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     alias: [
         { find: /^~(.*)$/, replacement: '$1' },
+        { find: 'components', replacement: '/src/components' },
     ],
   },
 })

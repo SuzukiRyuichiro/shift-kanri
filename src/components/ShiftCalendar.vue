@@ -26,8 +26,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-// import HourPicker from "@/component/scheduler/HourPicker";
-import HourPicker from "./scheduler/HourPicker.vue";
+import HourPicker from "components/scheduler/HourPicker.vue";
 
 const hey = ref("");
 const test: Array<object> = [

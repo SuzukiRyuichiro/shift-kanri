@@ -3,4 +3,4 @@ import './style.css'
 import App from './App.vue'
 import { createVuesticEssential, VaDataTable, VaIcon, VaInput } from 'vuestic-ui'
 
-createApp(App).use(createVuesticEssential({ components: { VaDataTable, VaIcon, VaInput } })).mount('#app')
+const app = createApp(App).use(createVuesticEssential({ components: { VaDataTable, VaIcon, VaInput } })).mount('#app')
