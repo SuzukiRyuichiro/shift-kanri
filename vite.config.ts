@@ -3,5 +3,13 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [vue()],
+
+  // [vuestic-ui] Add alias for ~normalize.css.
+  resolve: {
+    alias: [
+        { find: /^~(.*)$/, replacement: '$1' },
+        { find: 'components', replacement: '/src/components' },
+    ],
+  },
 })
