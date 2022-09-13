@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@vuestic/ag-grid-theme": "^1.0.3",
-    "vite-tsconfig-paths": "^3.5.0",
     "vue": "^3.2.37",
     "vuestic-ui": "^1.4.7"
   },
