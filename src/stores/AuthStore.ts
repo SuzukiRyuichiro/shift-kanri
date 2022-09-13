@@ -6,4 +6,4 @@ export const useAuthStore = defineStore('AuthStore', {
       currentUser: null,
     }
   }
-};
+});

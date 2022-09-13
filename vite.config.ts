@@ -10,6 +10,7 @@ export default defineConfig({
     alias: [
         { find: /^~(.*)$/, replacement: '$1' },
         { find: 'components', replacement: '/src/components' },
+        { find: 'stores', replacement: '/src/stores' },
     ],
   },
 })
