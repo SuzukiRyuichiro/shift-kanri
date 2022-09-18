@@ -1,7 +1,7 @@
 <template>
-  <div class="flex">
-    <va-input :max-length="2" placeholder="11" v-model="start" />
-    <va-input :max-length="2" placeholder="11" v-model="end" />
+  <div class="flex gap-2">
+    <va-input class="basis-1/2" :max-length="2" placeholder="入" v-model="start" />
+    <va-input class="basis-1/2" :max-length="2" placeholder="終" v-model="end" />
   </div>
   </template>
 
