@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vuestic/ag-grid-theme": "^1.0.3",
+    "date-fns": "^2.29.3",
     "firebase": "^9.10.0",
     "firebase-tools": "^11.9.0",
     "pinia": "^2.0.22",
