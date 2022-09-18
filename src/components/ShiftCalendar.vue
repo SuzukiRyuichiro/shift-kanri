@@ -1,4 +1,11 @@
 <template>
+  <va-button @click="showModal = !showModal">表示する日にちを選択する</va-button>
+  <va-modal v-model="showModal" message="message" title="Overview">
+    <template #content="{ ok }">
+      <date-picker />
+      <va-button @click="ok">ok</va-button>
+    </template>
+  </va-modal>
   <va-data-table :items="test">
     <template #cell(day1)="{ value }">
       <hour-picker></hour-picker>
@@ -27,7 +34,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import HourPicker from "components/scheduler/HourPicker.vue";
+import DatePicker from "components/scheduler/DatePicker.vue";
 
+const showModal = ref(false);
 const hey = ref("");
 const test: Array<object> = [
   {
