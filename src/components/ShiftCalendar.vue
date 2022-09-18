@@ -1,5 +1,8 @@
 <template>
-  <va-button @click="showModal = !showModal">表示する日にちを選択する</va-button>
+  <va-button @click="showModal = !showModal"
+    >表示する日にちを選択する</va-button
+  >
+  <h1>{{ startDate }}</h1>
   <va-modal v-model="showModal" message="message" title="Overview">
     <template #content="{ ok }">
       <date-picker />
@@ -35,9 +38,13 @@
 import { ref } from "vue";
 import HourPicker from "components/scheduler/HourPicker.vue";
 import DatePicker from "components/scheduler/DatePicker.vue";
+import { useDateStore } from "stores/DateStore";
 
 const showModal = ref(false);
 const hey = ref("");
+const dateStore = useDateStore();
+
+const { startDate } = dateStore;
 const test: Array<object> = [
   {
     name: "ミナ",
