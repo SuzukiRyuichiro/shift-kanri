@@ -1,9 +1,13 @@
 <template>
-  <va-input :max-length="5" placeholder="11-18" v-model="hey" />
-</template>
+  <div class="flex gap-2">
+    <va-input class="basis-1/2" :max-length="2" placeholder="入" v-model="start" />
+    <va-input class="basis-1/2" :max-length="2" placeholder="終" v-model="end" />
+  </div>
+  </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 
-const hey = ref("");
+const start = ref("");
+const end = ref("");
 </script>

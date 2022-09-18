@@ -9,6 +9,7 @@ const authStore = useAuthStore();
 
 <template>
   <div>
+    <h1 class="italic">KITADE TACOS TKO ST</h1>
     <ShiftCalendar />
   </div>
 </template>
