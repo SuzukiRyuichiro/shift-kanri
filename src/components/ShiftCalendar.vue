@@ -9,7 +9,7 @@
       <va-button @click="ok">ok</va-button>
     </template>
   </va-modal>
-  <va-data-table :items="test">
+  <va-data-table :items="items">
     <template #cell(day1)="{ value }">
       <hour-picker></hour-picker>
     </template>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import HourPicker from "components/scheduler/HourPicker.vue";
 import DatePicker from "components/scheduler/DatePicker.vue";
 import { useDateStore } from "stores/DateStore";
@@ -45,76 +45,28 @@ const hey = ref("");
 const dateStore = useDateStore();
 
 const { startDate } = dateStore;
-const test: Array<object> = [
-  {
-    name: "ミナ",
-    day1: "11-22",
-    day2: "11-23",
-    day3: "11-23",
-    day4: "11-23",
-    day5: "11-23",
-    day6: "11-23",
-    day7: "11-23",
-  },
-  {
-    name: "チヅ",
-    day1: "11-22",
-    day2: "11-23",
-    day3: "11-23",
-    day4: "11-23",
-    day5: "11-23",
-    day6: "11-23",
-    day7: "11-23",
-  },
-  {
-    name: "チホ",
-    day1: "11-22",
-    day2: "11-23",
-    day3: "11-23",
-    day4: "11-23",
-    day5: "11-23",
-    day6: "11-23",
-    day7: "11-23",
-  },
-  {
-    name: "サヤカ",
-    day1: "11-22",
-    day2: "11-23",
-    day3: "11-23",
-    day4: "11-23",
-    day5: "11-23",
-    day6: "11-23",
-    day7: "11-23",
-  },
-  {
-    name: "アン",
-    day1: "11-22",
-    day2: "11-23",
-    day3: "11-23",
-    day4: "11-23",
-    day5: "11-23",
-    day6: "11-23",
-    day7: "11-23",
-  },
-  {
-    name: "ケイゴ",
-    day1: "11-22",
-    day2: "11-23",
-    day3: "11-23",
-    day4: "11-23",
-    day5: "11-23",
-    day6: "11-23",
-    day7: "11-23",
-  },
-  {
-    name: "カンタ",
-    day1: "11-22",
-    day2: "11-23",
-    day3: "11-23",
-    day4: "11-23",
-    day5: "11-23",
-    day6: "11-23",
-    day7: "11-23",
-  },
+const employees: Array<string> = [
+  "ミナ",
+  "チヅ",
+  "チホ",
+  "サヤカ",
+  "アン",
+  "ケイゴ",
+  "カンタ"
 ];
+
+const items = computed(() => {
+  return employees.map((employee) => {
+    return {
+      employee: employee,
+      day1: "",
+      day2: "",
+      day3: "",
+      day4: "",
+      day5: "",
+      day6: "",
+      day7: ""
+    };
+  });
+});
 </script>
