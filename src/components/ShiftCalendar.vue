@@ -2,7 +2,6 @@
   <va-button @click="showModal = !showModal"
     >表示する日にちを選択する</va-button
   >
-  <h1>{{ startDate }}</h1>
   <va-modal v-model="showModal" message="message" title="Overview">
     <template #content="{ ok }">
       <date-picker />
@@ -39,9 +38,9 @@ import { ref, computed } from "vue";
 import HourPicker from "components/scheduler/HourPicker.vue";
 import DatePicker from "components/scheduler/DatePicker.vue";
 import { useDateStore } from "stores/DateStore";
+import { format } from "date-fns";
 
 const showModal = ref(false);
-const hey = ref("");
 const dateStore = useDateStore();
 
 const { startDate } = dateStore;
@@ -52,20 +51,24 @@ const employees: Array<string> = [
   "サヤカ",
   "アン",
   "ケイゴ",
-  "カンタ"
+  "カンタ",
 ];
 
+const headers = computed(() => {
+  return [...Array(5).keys()].map((num) => {
+    return format(startDate.setDate(startDate.getDate() + num), "MM/dd");
+  });
+});
+
 const items = computed(() => {
+  const obj = headers.value.reduce((accumulator, value) => {
+    return { ...accumulator, [value]: "" };
+  }, {});
+
   return employees.map((employee) => {
     return {
       employee: employee,
-      day1: "",
-      day2: "",
-      day3: "",
-      day4: "",
-      day5: "",
-      day6: "",
-      day7: ""
+      ...obj,
     };
   });
 });
