@@ -1,13 +1,15 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import ShiftCalendar from "components/ShiftCalendar.vue";
-</script>
-
 <template>
-  <div>
-    <ShiftCalendar />
-  </div>
+	<ul>
+		<li v-for="employee in employees" :key="employee.id">
+			<span>{{ employee.name }}</span>
+		</li>
+	</ul>
 </template>
 
-<style scoped></style>
+<script setup lang="ts">
+import { useCollection, useFirestore } from "vuefire"
+import { collection } from "firebase/firestore"
+
+const db = useFirestore()
+const employees = useCollection(collection(db, "employees"))
+</script>

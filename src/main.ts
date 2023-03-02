@@ -11,10 +11,23 @@ import {
 	VaModal,
 	VaButton,
 } from "vuestic-ui"
+import { firebaseApp } from "./firebase/firebaseinit"
+import { VueFire, VueFireAuth, VueFireFirestoreOptionsAPI } from "vuefire"
 
 const app = createApp(App)
 const pinia = createPinia()
+
 app.use(pinia)
+
+app.use(VueFire, {
+	firebaseApp,
+	modules: [
+		// we will see other modules later on
+		VueFireAuth(),
+		VueFireFirestoreOptionsAPI(),
+	],
+})
+
 app.use(
 	createVuesticEssential({
 		components: {

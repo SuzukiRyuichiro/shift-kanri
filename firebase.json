@@ -7,7 +7,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "site": "kitade-shift-management",
+    "site": "kitade-shift-kanri",
     "public": "dist",
     "ignore": [
       "firebase.json",
