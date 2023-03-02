@@ -8,9 +8,9 @@ export default defineConfig({
   // [vuestic-ui] Add alias for ~normalize.css.
   resolve: {
     alias: [
-        { find: /^~(.*)$/, replacement: '$1' },
-        { find: 'components', replacement: '/src/components' },
-        { find: 'stores', replacement: '/src/stores' },
+      { find: /^~(.*)$/, replacement: '$1' },
+      { find: 'components', replacement: '/src/components' },
+      { find: 'stores', replacement: '/src/stores' },
     ],
   },
 })

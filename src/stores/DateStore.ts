@@ -1,14 +1,14 @@
-import { defineStore } from "pinia"
+import { defineStore } from 'pinia'
 
-export const useDateStore = defineStore("date", {
-	state: (): DateStore => {
-		return {
-			// for initially empty lists
-			startDate: new Date(),
-		}
-	},
+export const useDateStore = defineStore('date', {
+  state: (): DateStore => {
+    return {
+      // for initially empty lists
+      startDate: new Date(),
+    }
+  },
 })
 
 interface DateStore {
-	startDate: Date
+  startDate: Date
 }
